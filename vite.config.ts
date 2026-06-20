@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig({
+  base: '/PES-Teachers-Bag/',
+  plugins: [react(), tailwindcss()],
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
