@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-primary: #1b5e20;
+  --color-brand-secondary: #2e7d32;
+  --color-brand-accent: #d32f2f;
+  --color-brand-sky: #e3f2fd;
+}
+
+/* Base print rules for official report */
+.print-only {
+  display: none;
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+    width: 100% !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  /* Remove layout padding scrollbar elements during printing */
+  html, body, #root, main {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
